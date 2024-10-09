@@ -1,0 +1,132 @@
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background: #1f1f1f;
+}
+
+.parent {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.box {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    animation: rotateBox 2s linear infinite, wobble .4s ease-in-out infinite;
+    transition: background-color 0.5s ease;
+    cursor: pointer;
+}
+
+.inner-box {
+    background-color: rgba(255, 255, 255, 0.3);
+    animation: rotateInnerBox 1s linear infinite reverse;
+    border-radius: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes rotateBox {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateInnerBox {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes wobble {
+
+    0%,
+    100% {
+        transform: rotate(0deg), translateX(2px);
+    }
+
+    25% {
+        transform: rotate(10deg), translateY(2px);
+    }
+
+    50% {
+        transform: rotate(-10deg), translatex(2px);
+    }
+
+    75% {
+        transform: rotate(5deg), translatey(2px);
+    }
+}
+
+.box:hover {
+    background-color: rgba(0, 188, 212, 0.8);
+}
+
+#scoreBoard {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    font-size: 24px;
+}
+
+#timer {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 24px;
+}
+
+#gameOver {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 36px;
+    display: none;
+}
+
+#winner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 36px;
+    display: none;
+}
+
+#restartButton {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    font-size: 20px;
+    color: white;
+    background-color: #e14177;
+    border: none;
+    border-radius: 5px;
+    display: none;
+    cursor: pointer;
+}
